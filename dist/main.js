@@ -1,15 +1,8 @@
-"use strict";
-//SWITCH MODE
-Object.defineProperty(exports, "__esModule", { value: true });
+// SWITCH MODE
 const switchBtn = document.getElementById("checkNativeSwitch");
 const switchLightMode = () => {
-    const switchTheme = document.getElementById("body");
-    if (switchTheme.className === "") {
-        switchTheme.className = "light-mode";
-    }
-    else {
-        switchTheme.className = "";
-    }
+    document.body.classList.toggle("light-mode");
 };
 switchBtn.addEventListener("change", switchLightMode);
+export {};
 //# sourceMappingURL=main.js.map

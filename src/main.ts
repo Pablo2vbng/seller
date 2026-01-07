@@ -1,14 +1,11 @@
-//SWITCH MODE
+// SWITCH MODE
 
 const switchBtn = document.getElementById("checkNativeSwitch") as HTMLInputElement;
 
 const switchLightMode = () => {
-    const switchTheme = document.getElementById("body") as HTMLElement
-    if(switchTheme.className ===""){
-        switchTheme.className = "light-mode"
-    }else{
-        switchTheme.className = ""
-    }
+
+    document.body.classList.toggle("light-mode");
 };
 
-switchBtn.addEventListener("change", switchLightMode);
+
+switchBtn.addEventListener("change", switchLightMode)

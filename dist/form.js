@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const form = document.getElementById("contactForm");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
@@ -31,4 +29,5 @@ const validateForm = () => {
     localStorage.setItem("data", data);
 };
 form.addEventListener("submit", validateForm);
+export {};
 //# sourceMappingURL=form.js.map
