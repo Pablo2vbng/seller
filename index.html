@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller | Home</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-dark bg-black fixed-top border-bottom border-secondary">
+            <div class="container-fluid px-4">
+                <!-- LOGO SELLER -->
+                <a class="logo" href="#">
+                    <span class="logo__s">S</span><span class="logo__eller">eller</span>
+                </a>
+                <!-- END LOGO SELLER -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navSidebar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end bg-black text-white" tabindex="-1" id="navSidebar">
+                    <div class="offcanvas-header border-bottom border-dark">
+                        <div class="logo"><span class="logo__s">S</span><span class="logo__eller">eller</span></div>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav gap-3">
+                            <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" href="html/contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--END HEADER -->
+    <!--LIGHT MODE -->
+    <section class="theme-switch">
+        <div class="theme-switch__container">
+            <div class="form-check form-switch">
+                <input class="theme-switch__input form-check-input" type="checkbox" id="checkNativeSwitch">
+                <label class="theme-switch__label form-check-label" for="checkNativeSwitch">
+                    Modo Claro
+                </label>
+            </div>
+        </div>
+    </section>
+    <!--END LIGHT MODE-->
+    <!-- CARDS -->
+    <main class="menu">
+        <a class="menu__card" href="html/altaClientes.html" target="_blank">
+            <h2 class="menu__title">Alta Clientes</h2>
+            <p class="menu__subtitle">Sistema de registro y gestión de nuevos clientes corporativos.</p>
+        </a>
+
+        <a class="menu__card" href="html/precios.html" target="_blank">
+            <h2 class="menu__title">Precios y Stocks</h2>
+            <p class="menu__subtitle">Consulta de inventario y tarifas actualizadas en tiempo real.</p>
+        </a>
+
+        <a class="menu__card" href="https://drive.google.com/..." target="_blank">
+            <h2 class="menu__title">Catálogo y Tarifa</h2>
+            <p class="menu__subtitle">Descarga de documentos técnicos en formato PDF.</p>
+        </a>
+
+        <a class="menu__card" href="html/fichasTecnicas.html" target="_blank">
+            <h2 class="menu__title">Buscador Fichas</h2>
+            <p class="menu__subtitle">Explora las especificaciones técnicas detalladas de productos.</p>
+        </a>
+
+        <a class="menu__card" href="html/garantias.html" target="_blank">
+            <h2 class="menu__title">Garantías</h2>
+            <p class="menu__subtitle">Gestión y seguimiento de reclamaciones post-venta.</p>
+        </a>
+    </main>
+    <!-- END CARDS -->
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__content">
+            <!--  ICONS -->
+            <div class="footer__social">
+                <a href="https://instagram.com" class="footer__link footer__link--icon" target="_blank"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com" class="footer__link footer__link--icon" target="_blank"
+                    aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <!--END ICONS -->
+            <!-- NAV FOOTER -->
+            <nav class="footer__nav">
+                <a href="https://lawebdetuempresa.com" class="footer__link" target="_blank">Web Corporativa</a>
+                <a href="html/contacto.html" class="footer__link">Página de Contacto</a>
+                <a href="html/politicas.html" class="footer__link">Cookies y Privacidad</a>
+            </nav>
+            <!-- END NAV FOOTER -->
+            <div class="footer__copy">
+                <p>&copy; 2026 <span class="footer__highlight">Seller</span>. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+    <!-- SCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SCRIPT -->
+    <script src="main.js"></script>
+</body>
+
+</html>

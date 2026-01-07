@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria Técnica - Proyecto SELLER</title>
+    <style>
+        :root {
+            --primary: #FFD700;
+            --bg: #000000;
+            --card-bg: #121212;
+            --text: #ffffff;
+            --text-muted: #aaaaaa;
+            --border: #252525;
+            /* FUENTE CALIBRI */
+            --font-main: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+            --transition-fast: 0.3s ease;
+        }
+
+        /* RESET Y BASE */
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0;
+        }
+
+        body {
+            padding:1rem;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* WRAPPER PARA FORZAR FONDO EN IMPRESIÓN */
+        .page-wrapper {
+            background-color: var(--bg);
+            min-height: 100vh;
+        }
+
+        /* FORZADO DE COLORES PARA PDF */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            body, .page-wrapper {
+                background-color: #000000 !important;
+                color: #ffffff !important;
+                font-family: Calibri, sans-serif !important;
+            }
+            .page-break { 
+                page-break-before: always; 
+            }
+            .highlight-box {
+                background-color: #121212 !important;
+                border: 1px solid #333333 !important;
+            }
+            .tech-item {
+                background-color: #0a0a0a !important;
+                border-left: 4px solid #FFD700 !important;
+            }
+        }
+
+        .container {
+            max-width: 50rem;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* PORTADA */
+        .cover {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 0.25rem solid var(--primary);
+            margin-bottom: 4rem;
+        }
+
+        .logo-large {
+            font-weight: 800;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .logo-large__s {
+            font-size: 8rem;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-large__eller {
+            font-size: 3.5rem;
+            color: var(--text);
+            margin-left: -0.2rem;
+        }
+
+        .cover__title {
+            font-size: 1.6rem;
+            letter-spacing: 0.4rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .cover__info {
+            font-size: 1.2rem;
+            border-top: 0.0625rem solid var(--border);
+            padding-top: 2.5rem;
+            text-align: left;
+            width: 100%;
+            max-width: 32rem;
+        }
+
+        .cover__info p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* SECCIONES CONTENIDO */
+        section { 
+            margin-bottom: 2rem;
+           
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            border-left: 0.4rem solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p { 
+            margin-bottom: 1.2rem; 
+            text-align: justify;
+            color: var(--text-muted);
+        }
+
+        strong { color: var(--primary); font-weight: 600; }
+
+        .highlight-box {
+            background-color: var(--card-bg);
+            border: 0.0625rem solid var(--border);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-item {
+            flex: 1 1 18rem;
+            background: rgba(255, 215, 0, 0.03);
+            border-left: 0.25rem solid var(--primary);
+            padding: 1.2rem;
+        }
+
+        ul { 
+            padding-left: 1.5rem; 
+            margin-bottom: 1.5rem;
+        }
+
+        li { 
+            margin-bottom: 0.8rem; 
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 0.0625rem solid var(--border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="container">
+        <!-- PÁGINA 1: PORTADA -->
+        <div class="cover">
+            <div class="logo-large">
+                <span class="logo-large__s">S</span><span class="logo-large__eller">eller</span>
+            </div>
+            <div class="cover__title">Memoria de Proyecto Técnico</div>
+            <div class="cover__info">
+                <p><strong>Ciclo:</strong> Grado Superior en Desarrollo de Aplicaciones Web (DAW)</p>
+                <p><strong>Curso/Alumno:</strong> 2025-2026 / Pablo Vidal Vidal</p>
+                <p><strong>Módulo:</strong> Proyecto de Desarrollo de Aplicaciones Web</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1 -->
+        <section>
+            <br>
+            <h2>1. Introducción y Propósito</h2>
+            <div class="highlight-box">
+                <p><strong>Seller</strong> es una plataforma web desarrollada para optimizar la gestión comercial de agentes de ventas. Su propósito principal es centralizar en una sola interfaz la gestión de clientes, la consulta de inventarios dinámicos y la elaboración de propuestas comerciales rápidas.</p>
+                <p>El diseño se basa en una estética de alto contraste ("Dark Mode") que minimiza la fatiga visual y proyecta una imagen tecnológica y profesional.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2 -->
+        <section>
+            <h2>2. Metodologías y Estándares</h2>
+            
+            <h3>Metodología BEM</h3>
+            <p>Se ha implementado el estándar <strong>BEM (Block, Element, Modifier)</strong> para la arquitectura de clases CSS. Esta elección garantiza que cada componente visual sea independiente, facilitando la escalabilidad del proyecto y permitiendo que otros desarrolladores comprendan la jerarquía del código a simple vista.</p>
+
+            <h3>Sass Avanzado </h3>
+            <p>Para la gestión de estilos se utiliza Sass. Esto permite modularizar los tokens de diseño (colores, fuentes y espaciados) en archivos específicos, asegurando un sistema de diseño coherente y sin errores de ámbito global.</p>
+        </section>
+
+        <!-- SECCIÓN 3 -->
+        <section>
+            <h2>3. Stack Tecnológico</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <strong>TypeScript & JS Vanilla</strong>
+                    <p>Uso de TypeScript para definir interfaces de datos y asegurar un tipado estático que reduce errores lógicos durante el desarrollo.</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Flexbox, REM & Bootstrap</strong>
+                    <p>Layout construido íntegramente con Flexbox y unidades de medida relativas (REM), asegurando un escalado perfecto en cualquier resolución.Se ha integrado Bootstrap de forma selectiva, aprovechando sus capacidades nativas para componentes de interacción (como el menú Offcanvas)</p>
+                </div>
+        </section>
+
+        <!-- SECCIÓN 4 -->
+ 
+         <br>
+        <section>
+            <h2>4. Arquitectura de Datos Híbrida</h2>
+            <p>La eficiencia de la aplicación reside en su modelo de datos dual, diseñado para maximizar el rendimiento:</p>
+            <ul>
+                <li><strong>Persistencia Crítica (MySQL):</strong> A través de un entorno <strong>XAMPP</strong> local, gestionamos el registro de usuarios y el alta oficial de clientes comerciales, asegurando la integridad de los datos.</li>
+                <li><strong>Carga Dinámica (JSON):</strong> El catálogo de productos y tarifas se almacena en estructuras <strong>JSON</strong>. Esto permite realizar búsquedas instantáneas y filtrar precios sin necesidad de peticiones costosas al servidor de base de datos.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 5 -->
+
+        <section>
+          
+
+            <h2>5. Funcionalidades del Sistema</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>Dashboard Interactivo:</strong> Una landing page diseñada con tarjetas de acceso rápido para minimizar clics innecesarios.</li>
+                    <li><strong>Preparador de Presupuestos:</strong> Sistema interactivo que permite añadir productos y calcular totales para generar ofertas de venta.</li>
+                    <li><strong>Temas de Interfaz:</strong> Switch dinámico de Modo Claro / Modo Oscuro gestionado mediante variables CSS nativas en el :root.</li>
+                    <li><strong>Responsive Nativo:</strong> Interfaz adaptable a tablets y smartphones para permitir el trabajo en movilidad de los comerciales.</li>
+                </ul>
+            </div>
+        </section>
+<br>
+<br>
+        <footer>
+            <p>Memoria Técnica de Proyecto - Ciclo DAW - SELLER</p>
+            <p>Pablo Vidal Vidal</p>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+@use 'mixins';
+
+.footer {
+    background-color: #0a0a0a; 
+    border-top: 0.1rem solid var(--primary-color);
+    padding: 3.5rem 1rem 1.5rem;
+    margin-top: 4rem;
+
+    &__content {
+        @include mixins.flex-center-column;
+        gap: 2.5rem;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    &__social {
+        @include mixins.flex-center;
+        gap: 2rem;
+    }
+
+    &__nav {
+        @include mixins.flex-center;
+        flex-wrap: wrap;
+        gap: 1.8rem;
+    }
+
+    &__link {
+        color: var(--text-main);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color var(--transition-fast);
+
+        &:hover {
+            color: var(--primary-color);
+        }
+
+        &--icon {
+            color: var(--primary-color);
+            font-size: 1.7rem;
+            
+            &:hover {
+                color: var(--text-main);
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__copy {
+        width: 100%;
+        text-align: center;
+        border-top: 0.0625rem solid var(--border-soft);
+        padding-top: 1.5rem;
+        color: #555;
+        font-size: 0.8rem;
+    }
+
+    &__highlight {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+}

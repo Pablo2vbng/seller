@@ -1,0 +1,75 @@
+@use 'footer';
+@use 'mixins';
+@use 'vars';
+
+.container__form {
+    max-width: 80%;
+    background-color: var(--bg-card);
+    border: 0.0625rem solid var(--border-soft);
+    border-radius: 0.5rem;
+    padding: 2.5rem 1.5rem;
+    text-decoration: none;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+
+    &:hover {
+        transform: translateY(0.2rem);
+        border-color: var(--primary-color);
+    }
+}
+
+;
+
+.form {
+    background-color: var(--bg-card);
+
+    &__title {
+        text-align: center;
+        color: var(--primary-color)
+    }
+
+    &__div {
+        padding: 0.5rem;
+        @include mixins.flex-start-column;
+        width: 90%;
+        margin: 0 auto;
+        &-checkbox{
+            text-align: center;
+            padding: 0.5rem;
+        }
+    }
+
+    &__input {
+        border: none;
+        border-radius: 0.3125rem;
+        padding: 0.2rem;
+
+        &:hover {
+            border: 0.0625rem solid var(--primary-color);
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color:var(--primary-color);
+        transition: transform var(--transition-fast);
+        &:hover{
+            display:inline-block;
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+    }
+    &__btn{
+        background-color: var(--primary-color);
+        color: var(--text-main);
+        font-weight: bold;
+        border: none;
+        border-radius: 0.3125rem;
+        padding: 0.2rem;
+        transition: transform var(--transition-fast);
+        &:hover{
+            display:inline-block;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    }
+
+}

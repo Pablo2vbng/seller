@@ -1,0 +1,40 @@
+@use 'mixins';
+
+.menu {
+    @include mixins.flex-center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 6rem 1rem 3rem;
+    max-width: 80rem;
+    margin: 0 auto;
+
+    &__card {
+        flex: 1 1 20rem; 
+        max-width: 26rem;
+        background-color: var(--bg-card);
+        border: 0.0625rem solid var(--border-soft);
+        border-radius: 0.5rem;
+        padding: 2.5rem 1.5rem;
+        text-decoration: none;
+        transition: transform var(--transition-fast), border-color var(--transition-fast);
+        @include mixins.flex-center-column;
+        text-align: center;
+
+        &:hover {
+            transform: translateY(-0.35rem);
+            border-color: var(--primary-color);
+        }
+    }
+
+    &__title {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+}
