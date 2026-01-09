@@ -1,21 +1,23 @@
 :root {
-    --primary-color: #FFD700;  
-    --secondary-color: #000000; 
-    --bg-card: #121212;
-    --text-main: #ffffff;
-    --text-muted: #aaaaaa;
-    --border-soft: #252525;
-    --font-family: calibri;
+    --primary-color: rgb(255, 215, 0);
+    --secondary-color: rgb(0, 0, 0);
+    --bg-card: rgb(18, 18, 18);
+    --text-main: rgb(255, 255, 255);
+    --text-muted: rgb(170, 170, 170);
+    --border-soft: rgb(37, 37, 37);
+    --error-color: rgb(220, 53, 69);
+    --font-family: 'Calibri', sans-serif;
     --transition-fast: 0.3s ease;
 }
 
-.light-mode{
-    --primary-color: rgb(37, 37, 135);  
-    --secondary-color: #ffffff; 
-    --bg-card: #ffffff;
-    --text-main: #ffffff;
-    --text-muted: #aaaaaa;
-    --border-soft: #252525;
-    --font-family: calibri;
+.light-mode {
+    --primary-color: rgb(37, 50, 170);
+    --secondary-color: rgb(255, 255, 255);
+    --bg-card: rgb(248, 249, 250);
+    --text-main: rgb(33, 37, 41);
+    --text-muted: rgb(108, 117, 125);
+    --border-soft: rgb(222, 226, 230);
+    --error-color: rgb(220, 53, 69);
+    --font-family: 'Calibri', sans-serif;
     --transition-fast: 0.3s ease;
 }

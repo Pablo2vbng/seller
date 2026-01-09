@@ -71,5 +71,9 @@
             cursor: pointer;
         }
     }
+    &-error__span{
+        color : var(--error-color);
+        padding-left: 1rem;
+    }
 
 }
