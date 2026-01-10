@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller | Home</title>
+    <title>Seller | Products</title>
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- STYLES -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body>
@@ -35,8 +35,8 @@
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav gap-3">
-                            <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
-                            <li class="nav-item"><a class="nav-link" href="html/contact.html">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="../index.html">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../html/contact.html">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
@@ -44,14 +44,21 @@
         </nav>
     </header>
     <!--END HEADER -->
+<main class="menu">
     <!-- PRODUCTS SECTION -->
-     <section class="products-section">
+    <section class="products-section">
         <h1 class="products-section__title">PRODUCTOS</h1>
-        <div class="products-section__card">
+        <form action="#" class="products-section__form" method="post" id="productsForm">
+            <input type="text" placeholder="buscar" class="products-section__input" id="inputCard">
+            <button type="submit" class="products-section__btn" id="inputBtn" >Buscar</button>
+        </form>
+        <div class="products-section-cards" id="productCards">
             
         </div>
      </section>
     <!-- END PRODUCTS SECTION -->
+</main>
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer__content">
@@ -70,8 +77,8 @@
             <!-- NAV FOOTER -->
             <nav class="footer__nav">
                 <a href="https://lawebdetuempresa.com" class="footer__link" target="_blank">Web Corporativa</a>
-                <a href="html/contact.html" class="footer__link">Página de Contacto</a>
-                <a href="html/politics.html" class="footer__link">Cookies y Privacidad</a>
+                <a href="../html/contact.html" class="footer__link">Página de Contacto</a>
+                <a href="../html/politics.html" class="footer__link">Cookies y Privacidad</a>
             </nav>
             <!-- END NAV FOOTER -->
             <div class="footer__copy">
@@ -83,7 +90,8 @@
     <!-- SCRIPT BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SCRIPT -->
-    <script type="module" src="dist/main.js"></script>
+    <script type="module" src="../dist/main.js"></script>
+    <script type="module" src="../dist/products.js"></script>
 </body>
 
 </html>
