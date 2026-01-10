@@ -1,187 +1,195 @@
-// SELECCIÓN DE ELEMENTOS
+console.log("Probando, probando...1,2 ... jeje");
+// ELEMENT SELECTION
 const form = document.getElementById("customerForm");
-const nombreFiscal = document.getElementById("nombreFiscal");
-const nombreComercial = document.getElementById("nombreComercial");
-const cifNif = document.getElementById("cifNif");
-const direccion = document.getElementById("direccion");
-const cp = document.getElementById("cp");
-const pais = document.getElementById("pais");
-const formaPago = document.getElementById("formaPago");
-const datosBancarios = document.getElementById("datosBancarios");
-const direccionEntrega = document.getElementById("direccionEntrega");
-const cpEntrega = document.getElementById("cpEntrega");
-const regimenIva = document.getElementById("regimenIva");
-const observaciones = document.getElementById("observaciones");
-const ventasBloqueadas = document.getElementById("ventasBloqueadas");
-const motivoBloqueo = document.getElementById("motivoBloqueo");
-const politics = document.getElementById("politics");
+const fiscalName = document.getElementById("fiscalName");
+const commercialName = document.getElementById("commercialName");
+const taxId = document.getElementById("taxId");
+const address = document.getElementById("address");
+const zipCode = document.getElementById("zipCode");
+const country = document.getElementById("country");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const paymentMethod = document.getElementById("paymentMethod");
+const bankData = document.getElementById("bankData");
+const deliveryAddress = document.getElementById("deliveryAddress");
+const deliveryZipCode = document.getElementById("deliveryZipCode");
+const vatRegime = document.getElementById("vatRegime");
+const observations = document.getElementById("observations");
+const blockedSales = document.getElementById("blockedSales");
+const blockReason = document.getElementById("blockReason");
+const privacyPolicy = document.getElementById("privacyPolicy");
 const validateForm = (e) => {
     e.preventDefault();
-    // VALOR INICIAL
-    let formOk = true;
-    // VALORES
-    const nombreFiscalValue = nombreFiscal.value;
-    const nombreComercialValue = nombreComercial.value;
-    const cifNifValue = cifNif.value;
-    const direccionValue = direccion.value;
-    const cpValue = cp.value;
-    const paisValue = pais.value;
-    const formaPagoValue = formaPago.value;
-    const datosBancariosValue = datosBancarios.value;
-    const direccionEntregaValue = direccionEntrega.value;
-    const cpEntregaValue = cpEntrega.value;
-    const regimenIvaValue = regimenIva.value;
-    const observacionesValue = observaciones.value;
-    const ventasBloqueadasValue = ventasBloqueadas.value;
-    const motivoBloqueoValue = motivoBloqueo.value;
-    const politicsValue = politics.checked;
+    // INITIAL STATE
+    let isFormValid = true;
+    // VALUES
+    const fiscalNameValue = fiscalName.value;
+    const commercialNameValue = commercialName.value;
+    const taxIdValue = taxId.value;
+    const addressValue = address.value;
+    const zipCodeValue = zipCode.value;
+    const countryValue = country.value;
+    const emailValue = email.value;
+    const phoneValue = phone.value;
+    const paymentMethodValue = paymentMethod.value;
+    const bankDataValue = bankData.value;
+    const deliveryAddressValue = deliveryAddress.value;
+    const deliveryZipCodeValue = deliveryZipCode.value;
+    const vatRegimeValue = vatRegime.value;
+    const observationsValue = observations.value;
+    const blockedSalesValue = blockedSales.value;
+    const blockReasonValue = blockReason.value;
+    const privacyPolicyValue = privacyPolicy.checked;
     // REGEX
-    const regexGeneral = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{3,}$/i; // Mínimo 3 caracteres
-    const regexCif = /^[a-zA-Z0-9]{9}$/i; // 9 caracteres alfanuméricos
-    const regexCP = /^[0-9]{5}$/; // 5 números
-    const regexIBAN = /^[a-zA-Z0-9 ]{15,34}$/; // Validación genérica de IBAN
-    // --- VALIDACIONES ---
-    // 1. NOMBRE FISCAL
-    const labelNombreFiscal = document.getElementById("labelNombreFiscal");
-    const errorNombreFiscal = labelNombreFiscal.querySelector(".form-error__span");
-    if (errorNombreFiscal)
-        errorNombreFiscal.remove();
-    if (regexGeneral.test(nombreFiscalValue)) {
-        console.log("Nombre Fiscal ok");
-    }
-    else {
-        formOk = false;
+    const regexGeneral = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{3,}$/i;
+    const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(es|com|net|org)$/;
+    const regexPhone = /^[0-9]{9}$/;
+    const regexTaxId = /^[a-zA-Z0-9]{9}$/i;
+    const regexZipCode = /^[0-9]{5}$/;
+    const regexIBAN = /^ES[0-9]{22}$/i;
+    // --- VALIDATIONS ---
+    // 1. FISCAL NAME
+    const labelFiscalName = document.getElementById("labelFiscalName");
+    const errorFiscalName = labelFiscalName.querySelector(".form-error__span");
+    if (errorFiscalName)
+        errorFiscalName.remove();
+    if (!regexGeneral.test(fiscalNameValue)) {
+        isFormValid = false;
         const span = document.createElement('span');
         span.className = "form-error__span";
         span.textContent = " Mínimo 3 caracteres";
-        labelNombreFiscal.appendChild(span);
+        labelFiscalName.appendChild(span);
     }
-    // 2. CIF / NIF
-    const labelCifNif = document.getElementById("labelCifNif");
-    const errorCifNif = labelCifNif.querySelector(".form-error__span");
-    if (errorCifNif)
-        errorCifNif.remove();
-    if (regexCif.test(cifNifValue)) {
-        console.log("CIF ok");
-    }
-    else {
-        formOk = false;
+    // 2. TAX ID (CIF/NIF)
+    const labelTaxId = document.getElementById("labelTaxId");
+    const errorTaxId = labelTaxId.querySelector(".form-error__span");
+    if (errorTaxId)
+        errorTaxId.remove();
+    if (!regexTaxId.test(taxIdValue)) {
+        isFormValid = false;
         const span = document.createElement('span');
         span.className = "form-error__span";
-        span.textContent = " Formato CIF/NIF incorrecto (9 caracteres)";
-        labelCifNif.appendChild(span);
+        span.textContent = " Formato incorrecto (9 caracteres)";
+        labelTaxId.appendChild(span);
     }
-    // 3. DIRECCIÓN
-    const labelDireccion = document.getElementById("labelDireccion");
-    const errorDireccion = labelDireccion.querySelector(".form-error__span");
-    if (errorDireccion)
-        errorDireccion.remove();
-    if (direccionValue.length > 5) {
-        console.log("Dirección ok");
-    }
-    else {
-        formOk = false;
+    // 3. ADDRESS
+    const labelAddress = document.getElementById("labelAddress");
+    const errorAddress = labelAddress.querySelector(".form-error__span");
+    if (errorAddress)
+        errorAddress.remove();
+    if (addressValue.length <= 5) {
+        isFormValid = false;
         const span = document.createElement('span');
         span.className = "form-error__span";
         span.textContent = " Dirección demasiado corta";
-        labelDireccion.appendChild(span);
+        labelAddress.appendChild(span);
     }
-    // 4. CÓDIGO POSTAL
-    const labelCp = document.getElementById("labelCp");
-    const errorCp = labelCp.querySelector(".form-error__span");
-    if (errorCp)
-        errorCp.remove();
-    if (regexCP.test(cpValue)) {
-        console.log("CP ok");
-    }
-    else {
-        formOk = false;
+    // 4. ZIP CODE
+    const labelZipCode = document.getElementById("labelZipCode");
+    const errorZipCode = labelZipCode.querySelector(".form-error__span");
+    if (errorZipCode)
+        errorZipCode.remove();
+    if (!regexZipCode.test(zipCodeValue)) {
+        isFormValid = false;
         const span = document.createElement('span');
         span.className = "form-error__span";
-        span.textContent = " CP debe tener 5 números";
-        labelCp.appendChild(span);
+        span.textContent = " Debe tener 5 números";
+        labelZipCode.appendChild(span);
     }
-    // 5. FORMA DE PAGO (SELECT)
-    const labelFormaPago = document.getElementById("labelFormaPago");
-    const errorFormaPago = labelFormaPago.querySelector(".form-error__span");
-    if (errorFormaPago)
-        errorFormaPago.remove();
-    if (formaPagoValue !== "") {
-        console.log("Forma pago ok");
+    // 5. EMAIL
+    const labelEmail = document.getElementById("labelEmail");
+    const errorEmail = labelEmail.querySelector(".form-error__span");
+    if (errorEmail)
+        errorEmail.remove();
+    if (!regexEmail.test(emailValue)) {
+        isFormValid = false;
+        const span = document.createElement('span');
+        span.className = "form-error__span";
+        span.textContent = " Email no válido";
+        labelEmail.appendChild(span);
     }
-    else {
-        formOk = false;
+    // 6. PHONE
+    const labelPhone = document.getElementById("labelPhone");
+    const errorPhone = labelPhone.querySelector(".form-error__span");
+    if (errorPhone)
+        errorPhone.remove();
+    if (!regexPhone.test(phoneValue)) {
+        isFormValid = false;
+        const span = document.createElement('span');
+        span.className = "form-error__span";
+        span.textContent = " 9 números obligatorios";
+        labelPhone.appendChild(span);
+    }
+    // 7. PAYMENT METHOD
+    const labelPaymentMethod = document.getElementById("labelPaymentMethod");
+    const errorPaymentMethod = labelPaymentMethod.querySelector(".form-error__span");
+    if (errorPaymentMethod)
+        errorPaymentMethod.remove();
+    if (paymentMethodValue === "") {
+        isFormValid = false;
         const span = document.createElement('span');
         span.className = "form-error__span";
         span.textContent = " Seleccione una opción";
-        labelFormaPago.appendChild(span);
+        labelPaymentMethod.appendChild(span);
     }
-    // 6. CHECK (POLÍTICA)
-    const divPolitics = politics.parentElement;
-    const errorPolitics = divPolitics.querySelector(".form-error__span");
-    if (errorPolitics)
-        errorPolitics.remove();
-    if (politics.checked) {
-        console.log("Check ok");
+    // 8. IBAN (BANK DATA)
+    const labelBankData = document.getElementById("labelBankData");
+    const errorBankData = labelBankData.querySelector(".form-error__span");
+    if (errorBankData)
+        errorBankData.remove();
+    const cleanIban = bankDataValue.replace(/\s+/g, '');
+    if (cleanIban !== "" && !regexIBAN.test(cleanIban)) {
+        isFormValid = false;
+        const span = document.createElement('span');
+        span.className = "form-error__span";
+        span.textContent = " IBAN incorrecto (ES + 22 dígitos)";
+        labelBankData.appendChild(span);
     }
-    else {
-        formOk = false;
+    // 9. PRIVACY POLICY
+    const privacyContainer = privacyPolicy.parentElement;
+    const errorPrivacy = privacyContainer.querySelector(".form-error__span");
+    if (errorPrivacy)
+        errorPrivacy.remove();
+    if (!privacyPolicy.checked) {
+        isFormValid = false;
         const span = document.createElement('span');
         span.className = "form-error__span";
         span.textContent = " Obligatorio aceptar los términos";
-        divPolitics.appendChild(span);
+        privacyContainer.appendChild(span);
     }
-    // RESULTADO FINAL
-    if (formOk) {
-        // OBJETO DE DATOS
+    // FINAL RESULT
+    if (isFormValid) {
         const customerData = {
-            fiscal: nombreFiscalValue,
-            comercial: nombreComercialValue,
-            cif: cifNifValue,
-            direccion: direccionValue,
-            cp: cpValue,
-            pais: paisValue,
-            pago: formaPagoValue,
-            banco: datosBancariosValue,
-            entrega: {
-                calle: direccionEntregaValue,
-                cp: cpEntregaValue
+            fiscalName: fiscalNameValue,
+            commercialName: commercialNameValue,
+            taxId: taxIdValue,
+            address: addressValue,
+            zipCode: zipCodeValue,
+            country: countryValue,
+            phone: phoneValue,
+            email: emailValue,
+            paymentMethod: paymentMethodValue,
+            bankData: cleanIban,
+            delivery: {
+                address: deliveryAddressValue,
+                zipCode: deliveryZipCodeValue
             },
-            iva: regimenIvaValue,
-            observaciones: observacionesValue,
-            bloqueo: {
-                estado: ventasBloqueadasValue,
-                motivo: motivoBloqueoValue
+            vatRegime: vatRegimeValue,
+            observations: observationsValue,
+            status: {
+                isBlocked: blockedSalesValue,
+                reason: blockReasonValue
             },
-            politics: politicsValue
+            acceptedPrivacy: privacyPolicyValue
         };
-        // STRING PARA LOG Y LOCALSTORAGE
-        const dataString = `
-        ALTA NUEVO CLIENTE:
-        -------------------
-        Nombre Fiscal: ${nombreFiscalValue}
-        Nombre Comercial: ${nombreComercialValue}
-        CIF/NIF: ${cifNifValue}
-        Dirección: ${direccionValue} (${cpValue}) - ${paisValue}
-        Forma de Pago: ${formaPagoValue}
-        IBAN: ${datosBancariosValue}
-        Regimen IVA: ${regimenIvaValue}
-        Entrega en: ${direccionEntregaValue} (${cpEntregaValue})
-        Ventas bloqueadas: ${ventasBloqueadasValue}
-        Motivo Bloqueo: ${motivoBloqueoValue}
-        Observaciones: ${observacionesValue}
-        `;
-        console.log(customerData);
-        console.log(dataString);
-        localStorage.setItem("lastCustomerData", JSON.stringify(customerData));
+        console.log("Customer Registration Data:", customerData);
+        localStorage.setItem("CustomerData", JSON.stringify(customerData));
         alert("Cliente dado de alta con éxito");
-        // Opcional: form.reset()
     }
     else {
-        console.error("El formulario tiene errores de validación.");
+        console.error("Form validation failed.");
     }
 };
-// LISTENER
 form.addEventListener("submit", validateForm);
 export {};
 //# sourceMappingURL=customer_registration.js.map

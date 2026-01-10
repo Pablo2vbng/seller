@@ -25,10 +25,7 @@ const validateForm = (e) => {
     const errorName = labelName.querySelector(".form-error__span");
     if (errorName)
         errorName.remove();
-    if (regexName.test(nameValue)) {
-        console.log("Nombre formulario ok");
-    }
-    else {
+    if (!regexName.test(nameValue)) {
         console.error("Nombre formulario incorrecto");
         formOk = false;
         const span = document.createElement('span');
@@ -41,10 +38,7 @@ const validateForm = (e) => {
     const errorEmail = labelEmail.querySelector(".form-error__span");
     if (errorEmail)
         errorEmail.remove();
-    if (regexEmail.test(emailValue)) {
-        console.log("Email correcto");
-    }
-    else {
+    if (!regexEmail.test(emailValue)) {
         console.error("Email formulario incorrecto ");
         formOk = false;
         const span = document.createElement('span');
@@ -57,10 +51,7 @@ const validateForm = (e) => {
     const errorTel = labelTel.querySelector(".form-error__span");
     if (errorTel)
         errorTel.remove();
-    if (regexTel.test(telValue)) {
-        console.log("Teléfono correcto");
-    }
-    else {
+    if (!regexTel.test(telValue)) {
         console.error("Teléfono formulario incorrecto ");
         formOk = false;
         const span = document.createElement('span');
@@ -73,10 +64,7 @@ const validateForm = (e) => {
     const errorComments = labelComments.querySelector(".form-error__span");
     if (errorComments)
         errorComments.remove();
-    if (regexComments.test(commentsValue)) {
-        console.log("Comentarios correcto");
-    }
-    else {
+    if (!regexComments.test(commentsValue)) {
         console.error("Comentarios formulario incorrecto ");
         formOk = false;
         const span = document.createElement('span');
@@ -89,10 +77,7 @@ const validateForm = (e) => {
     const errorPolitics = divPolitics.querySelector(".form-error__span");
     if (errorPolitics)
         errorPolitics.remove();
-    if (politics.checked) {
-        console.log("Check correcto");
-    }
-    else {
+    if (!politics.checked) {
         console.error("Check formulario incorrecto ");
         formOk = false;
         const span = document.createElement('span');
@@ -111,13 +96,13 @@ const validateForm = (e) => {
             politics: politicsValue
         };
         // STRING PARA GUARDAR EN LOCALSTORAGE
-        const data = `       Nombre: ${nameValue}
+        const dataContact = `       Nombre: ${nameValue}
         Email: ${emailValue}
         Teléfono: ${telValue}
         Comentarios: ${commentsValue}
         Acepta política: ${politicsValue}`;
-        console.log(data);
-        localStorage.setItem("data", data);
+        console.log(dataContact);
+        localStorage.setItem("data", dataContact);
         alert("Formulario enviado con éxito");
     }
     else {
@@ -126,4 +111,4 @@ const validateForm = (e) => {
 };
 form.addEventListener("submit", validateForm);
 export {};
-//# sourceMappingURL=form.js.map
+//# sourceMappingURL=contact_form.js.map

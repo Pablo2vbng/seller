@@ -49,56 +49,56 @@
         <!--FORM -->
         <section class="container__form">
             <h1 class="form__title">FORMULARIO DE ALTA CLIENTE</h1>
-            <form class="contact__form" action="#" method="post" target="_blank" id="customerForm">
+            <form class="contact__form" action="#" method="post" id="customerForm">
                 
-                <!-- SECCIÓN: DATOS IDENTIFICATIVOS -->
-                <fieldset class="form__fieldset ">
-                    <legend class="form__legend ">Datos Fiscales</legend>
+                <!-- SECTION: IDENTIFICATION DATA -->
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Datos Fiscales</legend>
                     <div class="form__div">
-                        <label class="form__label" for="nombreFiscal" id="labelNombreFiscal">Nombre Fiscal:*</label>
-                        <input class="form__input" type="text" name="nombreFiscal" id="nombreFiscal" required>
+                        <label class="form__label" for="fiscalName" id="labelFiscalName">Nombre Fiscal:*</label>
+                        <input class="form__input" type="text" name="fiscalName" id="fiscalName"  >
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="nombreComercial" id="labelNombreComercial">Nombre Comercial:</label>
-                        <input class="form__input" type="text" name="nombreComercial" id="nombreComercial">
+                        <label class="form__label" for="commercialName" id="labelCommercialName">Nombre Comercial:</label>
+                        <input class="form__input" type="text" name="commercialName" id="commercialName">
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="cifNif" id="labelCifNif">CIF/NIF:*</label>
-                        <input class="form__input" type="text" name="cifNif" id="cifNif" required>
+                        <label class="form__label" for="taxId" id="labelTaxId">CIF/NIF:*</label>
+                        <input class="form__input" type="text" name="taxId" id="taxId"  >
                     </div>
                 </fieldset>
 
-                <!-- SECCIÓN: UBICACIÓN y CONTACTO-->
-                <fieldset class="form__fieldset ">
+                <!-- SECTION: ADDRESS AND CONTACT -->
+                <fieldset class="form__fieldset">
                     <legend class="form__legend">Dirección y Contacto</legend>
                     <div class="form__div">
-                        <label class="form__label" for="direccion" id="labelDireccion">Dirección:*</label>
-                        <input class="form__input" type="text" name="direccion" id="direccion" required>
+                        <label class="form__label" for="address" id="labelAddress">Dirección:*</label>
+                        <input class="form__input" type="text" name="address" id="address"  >
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="cp" id="labelCp">Código Postal:*</label>
-                        <input class="form__input" type="text" name="cp" id="cp" required>
+                        <label class="form__label" for="zipCode" id="labelZipCode">Código Postal:*</label>
+                        <input class="form__input" type="text" name="zipCode" id="zipCode"  >
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="pais" id="labelPais">País:</label>
-                        <input class="form__input" type="text" name="pais" id="pais">
+                        <label class="form__label" for="country" id="labelCountry">País:</label>
+                        <input class="form__input" type="text" name="country" id="country">
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="tel" id="labelTel">Teléfono:*</label>
-                        <input class="form__input" type="text" name="tel" id="tel" required>
+                        <label class="form__label" for="phone" id="labelPhone">Teléfono:*</label>
+                        <input class="form__input" type="tel" name="phone" id="phone"  >
                     </div>
                     <div class="form__div">
                         <label class="form__label" for="email" id="labelEmail">Email:*</label>
-                        <input class="form__input" type="text" name="email" id="email" required>
+                        <input class="form__input" type="email" name="email" id="email"  >
                     </div>
                 </fieldset>
 
-                <!-- SECCIÓN: PAGO Y FACTURACIÓN -->
+                <!-- SECTION: BILLING AND PAYMENT -->
                 <fieldset class="form__fieldset">
                     <legend class="form__legend">Facturación y Pago</legend>
                     <div class="form__div">
-                        <label class="form__label" for="formaPago" id="labelFormaPago">Forma de pago:*</label>
-                        <select class="form__input" name="formaPago" id="formaPago" required>
+                        <label class="form__label" for="paymentMethod" id="labelPaymentMethod">Forma de pago:*</label>
+                        <select class="form__input" name="paymentMethod" id="paymentMethod"  >
                             <option value="" disabled selected>Seleccione una opción</option>
                             <option value="anticipada">Transferencia anticipada</option>
                             <option value="recibo30">Recibo a 30 días</option>
@@ -106,55 +106,55 @@
                         </select>
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="regimenIva" id="labelRegimenIva">Régimen IVA:*</label>
-                        <select class="form__input" name="regimenIva" id="regimenIva" required>
+                        <label class="form__label" for="vatRegime" id="labelVatRegime">Régimen IVA:*</label>
+                        <select class="form__input" name="vatRegime" id="vatRegime"  >
                             <option value="general">General</option>
                             <option value="exento">Exento</option>
                             <option value="recargo">Recargo de equivalencia</option>
                         </select>
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="datosBancarios" id="labelDatosBancarios">Datos Bancarios:</label>
-                        <input class="form__input" type="text" name="datosBancarios" id="datosBancarios" placeholder="IBAN">
+                        <label class="form__label" for="bankData" id="labelBankData">Datos Bancarios:</label>
+                        <input class="form__input" type="text" name="bankData" id="bankData" placeholder="IBAN">
                     </div>
                 </fieldset>
 
-                <!-- SECCIÓN: ENTREGA -->
+                <!-- SECTION: DELIVERY -->
                 <fieldset class="form__fieldset">
                     <legend class="form__legend">Dirección de entrega (si aplica)</legend>
                     <div class="form__div">
-                        <label class="form__label" for="direccionEntrega" id="labelDireccionEntrega">Dirección:</label>
-                        <input class="form__input" type="text" name="direccionEntrega" id="direccionEntrega">
+                        <label class="form__label" for="deliveryAddress" id="labelDeliveryAddress">Dirección:</label>
+                        <input class="form__input" type="text" name="deliveryAddress" id="deliveryAddress">
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="cpEntrega" id="labelCpEntrega">Código postal:</label>
-                        <input class="form__input" type="text" name="cpEntrega" id="cpEntrega">
+                        <label class="form__label" for="deliveryZipCode" id="labelDeliveryZipCode">Código postal:</label>
+                        <input class="form__input" type="text" name="deliveryZipCode" id="deliveryZipCode">
                     </div>
                 </fieldset>
 
-                <!-- SECCIÓN: OBSERVACIONES Y ESTADO -->
+                <!-- SECTION: INTERNAL MANAGEMENT -->
                 <fieldset class="form__fieldset">
                     <legend class="form__legend">Gestión Interna</legend>
                     <div class="form__div">
-                        <label class="form__label" for="observaciones" id="labelObservaciones">Observaciones:</label>
-                        <input class="form__input" type="text" name="observaciones" id="observaciones">
+                        <label class="form__label" for="observations" id="labelObservations">Observaciones:</label>
+                        <input class="form__input" type="text" name="observations" id="observations">
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="ventasBloqueadas" id="labelVentasBloqueadas">Ventas bloqueadas:</label>
-                        <select class="form__input" name="ventasBloqueadas" id="ventasBloqueadas">
+                        <label class="form__label" for="blockedSales" id="labelBlockedSales">Ventas bloqueadas:</label>
+                        <select class="form__input" name="blockedSales" id="blockedSales">
                             <option value="no">No</option>
                             <option value="si">Si</option>
                         </select>
                     </div>
                     <div class="form__div">
-                        <label class="form__label" for="motivoBloqueo" id="labelMotivoBloqueo">Motivo:</label>
-                        <input class="form__input" type="text" name="motivoBloqueo" id="motivoBloqueo">
+                        <label class="form__label" for="blockReason" id="labelBlockReason">Motivo:</label>
+                        <input class="form__input" type="text" name="blockReason" id="blockReason">
                     </div>
                 </fieldset>
 
-                <!-- POLÍTICAS -->
+                <!-- PRIVACY POLICY -->
                 <div class="form__div-checkbox">
-                    <input class="form_checkbox" type="checkbox" value="1" id="politics" required>
+                    <input class="form_checkbox" type="checkbox" value="1" id="privacyPolicy" required>
                     <span class="form__span">*Acepto las <a class="form__link" href="politics.html"> Condiciones y política de empresa</a></span>
                 </div>
 
@@ -184,8 +184,8 @@
             <!-- NAV FOOTER -->
             <nav class="footer__nav">
                 <a href="https://webempresa.com" class="footer__link" target="_blank">Web Corporativa</a>
-                <a href="html/contacto.html" class="footer__link">Página de Contacto</a>
-                <a href="html/politicas.html" class="footer__link">Cookies y Privacidad</a>
+                <a href="html/contact.html" class="footer__link">Página de Contacto</a>
+                <a href="html/politics.html" class="footer__link">Cookies y Privacidad</a>
             </nav>
             <!-- END NAV FOOTER -->
             <div class="footer__copy">
