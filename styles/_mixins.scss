@@ -30,3 +30,46 @@
     align-items: left;
     flex-direction: column;
 }
+
+@mixin card{
+    flex: 1 1 20rem; 
+    max-width: 26rem;
+    background-color: var(--bg-card);
+    border: 0.0625rem solid var(--border-soft);
+    border-radius: 0.5rem;
+    padding: 2.5rem 1.5rem;
+    text-decoration: none;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+    @include mixins.flex-center-column;
+    text-align: center;
+
+    &:hover {
+        transform: translateY(-0.35rem);
+        border-color: var(--primary-color);
+    }
+}
+
+@mixin input{
+    border: none;
+        border-radius: 0.3125rem;
+        padding: 0.2rem;
+
+        &:hover {
+            border: 0.0625rem solid var(--primary-color);
+        }
+}
+
+@mixin btn{
+    background-color: var(--primary-color);
+    color: var(--text-main);
+    font-weight: bold;
+    border: none;
+    border-radius: 0.3125rem;
+    padding: 0.2rem;
+    transition: transform var(--transition-fast);
+    &:hover{
+        display:inline-block;
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+}

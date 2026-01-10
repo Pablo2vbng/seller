@@ -44,20 +44,31 @@
         </nav>
     </header>
     <!--END HEADER -->
-<main class="menu">
-    <!-- PRODUCTS SECTION -->
-    <section class="products-section">
-        <h1 class="products-section__title">PRODUCTOS</h1>
-        <form action="#" class="products-section__form" method="post" id="productsForm">
-            <input type="text" placeholder="buscar" class="products-section__input" id="inputCard">
-            <button type="submit" class="products-section__btn" id="inputBtn" >Buscar</button>
-        </form>
-        <div class="products-section-cards" id="productCards">
-            
-        </div>
-     </section>
-    <!-- END PRODUCTS SECTION -->
-</main>
+    <main class="menu">
+        <!-- PRODUCTS SECTION -->
+        <section class="products-section">
+            <div>
+                <h1 class="products-section__title" id="title">PRODUCTOS</h1>
+            </div>
+            <div>
+                <form action="#" class="products-section__form" method="post" id="productsForm">
+                    <input type="text" placeholder="Nombre..." class="products-section__input" id="inputCard">
+                    <button type="submit" class="products-section__btn" id="inputBtn">Buscar</button>
+                </form>
+            </div>
+
+            <div class="products-section-cards" id="productCards">
+
+            </div>
+        </section>
+        <!-- END PRODUCTS SECTION -->
+        <!-- BACK BUTTON -->
+        
+        <a href="#title" class="footer__link footer__link--icon" 
+                    aria-label="back">
+                    <i class="fa-solid fa-arrow-up"></i>
+        <!-- END BACK BUTTON -->
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">

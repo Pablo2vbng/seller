@@ -66,18 +66,18 @@ const searchProducts = (e) => {
     if (foundProducts.length > 0) {
         foundProducts.forEach(p => {
             productCards.innerHTML += `<div class="card flex-style products-section-cards-card" style="width: 18rem;">
-                                    <img src="${p.thumbnail}" class="card-img-top products-section-cards-card__img" alt="${p.title}">
-                                    <div class="card-body">
-                                        <h5 class="card-title products-section-cards-card__h5">${p.title}</h5>
-                                        <p class="card-text products-section-cards-card__p">${p.description}</p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item products-section-cards-card__li">${p.price} €</li>
-                                    </ul>
-                                    <div class="card-body">
-                                        <button class="card-link products-section-cards-card__btn">AÑADIR A LA CESTA</button>
-                                    </div>
-                                </div>`;
+                                        <img src="${p.thumbnail}" class="card-img-top products-section-cards-card__img" alt="${p.title}">
+                                        <div class="card-body">
+                                            <h5 class="card-title products-section-cards-card__h5">${p.title}</h5>
+                                                <p class="card-text" products-section-cards-card__p>${p.description}</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item products-section-cards-card__li">${p.price} €</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <button class="card-link products-section-cards-card__btn">AÑADIR A LA CESTA</button>
+                                        </div>
+                                    </div>`;
         });
     }
     else {

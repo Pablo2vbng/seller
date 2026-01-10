@@ -2,3 +2,84 @@
 @use 'mixins';
 @use 'general';
 
+
+.products-section {
+    @include mixins.flex-center-column;
+
+    &__title {
+        text-align: center;
+        font-weight: bold;
+        color: var(--primary-color)
+    }
+
+    &__form {
+        @include mixins.flex-center;
+        margin: 0.5rem;
+        gap: 1rem;
+    }
+
+    &__input {
+        @include mixins.input;
+    }
+
+    &__btn {
+        @include mixins.btn;
+    }
+
+    &-cards {
+        @include mixins.flex-center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 90%;
+        padding-top: 2rem;
+        &-card {
+            flex: 1 1 20rem;
+            max-width: 26rem;
+            background-color: var(--bg-card);
+            border: 0.0625rem solid var(--border-soft);
+            border-radius: 0.5rem;
+            padding: 2.5rem 1.5rem;
+            text-decoration: none;
+            transition: transform var(--transition-fast), border-color var(--transition-fast);
+            @include mixins.flex-center-column;
+            text-align: center;
+            color: var(--text-main);
+            &:hover {
+                transform: translateY(-0.35rem);
+                border-color: var(--primary-color);
+            }
+
+            &__img {
+                border-radius: 50%;
+                background: radial-gradient(circle,var(--text-main), var(--bg-card) );
+                max-width: 12rem;
+                margin: 0 auto;
+            }
+
+            &__h5 {
+                max-height: 2rem;
+                color: var(--primary-color);
+            }
+
+            &__p {
+                color: var(--text-main);
+                min-height: 5rem;
+                max-width: 7rem;
+            }
+            &__li{
+                color: var(--primary-color);
+                border-radius: 0.3125rem;
+                border: 0.0625rem solid var(--primary-color);
+                background-color: var(--bg-card);
+            }
+            &__btn{
+                @include mixins.btn;
+            }
+        }
+    }
+}
+
+.arrow-up__a{
+    border: 0.0625rem solid var(--primary-color);
+    color: var(--primary-color);
+}
