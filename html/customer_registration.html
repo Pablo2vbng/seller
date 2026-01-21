@@ -44,127 +44,170 @@
         </nav>
     </header>
     <!--END HEADER -->
-
+        <!-- LIGHT MODE SWITCH -->
+        <section class="theme-switch">
+            <div class="theme-switch__container">
+                <div class="form-check form-switch">
+                    <input class="theme-switch__input form-check-input" type="checkbox" id="checkNativeSwitch">
+                    <label class="theme-switch__label form-check-label" for="checkNativeSwitch">
+                        Modo Claro
+                    </label>
+                </div>
+            </div>
+        </section>
+         <!--END LIGHT MODE SWITCH -->
     <main class="menu">
-        <!--FORM -->
         <section class="container__form">
             <h1 class="form__title">FORMULARIO DE ALTA CLIENTE</h1>
-            <form class="contact__form" action="#" method="post" id="customerForm">
-                
-                <!-- SECTION: IDENTIFICATION DATA -->
-                <fieldset class="form__fieldset">
-                    <legend class="form__legend">Datos Fiscales</legend>
-                    <div class="form__div">
-                        <label class="form__label" for="fiscalName" id="labelFiscalName">Nombre Fiscal:*</label>
-                        <input class="form__input" type="text" name="fiscalName" id="fiscalName"  >
+            
+            <form action="#" method="post" id="customerForm">
+                <!-- NAVEGACIÓN DE TABS -->
+                <ul class="nav nav-tabs mb-4" id="formTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="fiscal-tab" data-bs-toggle="tab" data-bs-target="#fiscal" type="button" role="tab">1. Datos Fiscales</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab">2. Contacto</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="billing-tab" data-bs-toggle="tab" data-bs-target="#billing" type="button" role="tab">3. Facturación</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="delivery-tab" data-bs-toggle="tab" data-bs-target="#delivery" type="button" role="tab">4. Entrega</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="management-tab" data-bs-toggle="tab" data-bs-target="#management" type="button" role="tab">5. Gestión</button>
+                    </li>
+                </ul>
+    
+                <!-- CONTENIDO DE LAS TABS -->
+                <div class="tab-content contact__form" id="formTabsContent">
+                    
+                    <!-- PESTAÑA 1 -->
+                    <div class="tab-pane fade show active w-100" id="fiscal" role="tabpanel">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Datos Fiscales</legend>
+                            <div class="form__div">
+                                <label class="form__label" for="fiscalName" id="labelFiscalName">Nombre Fiscal:*</label>
+                                <input class="form__input" type="text" name="fiscalName" id="fiscalName">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="commercialName" id="labelCommercialName">Nombre Comercial:</label>
+                                <input class="form__input" type="text" name="commercialName" id="commercialName">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="taxId" id="labelTaxId">CIF/NIF:*</label>
+                                <input class="form__input" type="text" name="taxId" id="taxId">
+                            </div>
+                        </fieldset>
                     </div>
-                    <div class="form__div">
-                        <label class="form__label" for="commercialName" id="labelCommercialName">Nombre Comercial:</label>
-                        <input class="form__input" type="text" name="commercialName" id="commercialName">
+    
+                    <!-- PESTAÑA 2 -->
+                    <div class="tab-pane fade w-100" id="contact" role="tabpanel">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Dirección y Contacto</legend>
+                            <div class="form__div">
+                                <label class="form__label" for="address" id="labelAddress">Dirección:*</label>
+                                <input class="form__input" type="text" name="address" id="address">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="zipCode" id="labelZipCode">Código Postal:*</label>
+                                <input class="form__input" type="text" name="zipCode" id="zipCode">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="country" id="labelCountry">País:</label>
+                                <input class="form__input" type="text" name="country" id="country">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="phone" id="labelPhone">Teléfono:*</label>
+                                <input class="form__input" type="tel" name="phone" id="phone">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="email" id="labelEmail">Email:*</label>
+                                <input class="form__input" type="email" name="email" id="email">
+                            </div>
+                        </fieldset>
                     </div>
-                    <div class="form__div">
-                        <label class="form__label" for="taxId" id="labelTaxId">CIF/NIF:*</label>
-                        <input class="form__input" type="text" name="taxId" id="taxId"  >
+    
+                    <!-- PESTAÑA 3 -->
+                    <div class="tab-pane fade w-100" id="billing" role="tabpanel">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Facturación y Pago</legend>
+                            <div class="form__div">
+                                <label class="form__label" for="paymentMethod" id="labelPaymentMethod">Forma de pago:*</label>
+                                <select class="form__input" name="paymentMethod" id="paymentMethod">
+                                    <option value="" disabled selected>Seleccione una opción</option>
+                                    <option value="anticipada">Transferencia anticipada</option>
+                                    <option value="recibo30">Recibo a 30 días</option>
+                                    <option value="confirming30">Confirming transferencia a 30 días</option>
+                                </select>
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="vatRegime" id="labelVatRegime">Régimen IVA:*</label>
+                                <select class="form__input" name="vatRegime" id="vatRegime">
+                                    <option value="general">General</option>
+                                    <option value="exento">Exento</option>
+                                    <option value="recargo">Recargo de equivalencia</option>
+                                </select>
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="bankData" id="labelBankData">Datos Bancarios:</label>
+                                <input class="form__input" type="text" name="bankData" id="bankData" placeholder="IBAN">
+                            </div>
+                        </fieldset>
                     </div>
-                </fieldset>
-
-                <!-- SECTION: ADDRESS AND CONTACT -->
-                <fieldset class="form__fieldset">
-                    <legend class="form__legend">Dirección y Contacto</legend>
-                    <div class="form__div">
-                        <label class="form__label" for="address" id="labelAddress">Dirección:*</label>
-                        <input class="form__input" type="text" name="address" id="address"  >
+    
+                    <!-- PESTAÑA 4 -->
+                    <div class="tab-pane fade w-100" id="delivery" role="tabpanel">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Dirección de entrega</legend>
+                            <div class="form__div">
+                                <label class="form__label" for="deliveryAddress" id="labelDeliveryAddress">Dirección:</label>
+                                <input class="form__input" type="text" name="deliveryAddress" id="deliveryAddress">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="deliveryZipCode" id="labelDeliveryZipCode">Código postal:</label>
+                                <input class="form__input" type="text" name="deliveryZipCode" id="deliveryZipCode">
+                            </div>
+                        </fieldset>
                     </div>
-                    <div class="form__div">
-                        <label class="form__label" for="zipCode" id="labelZipCode">Código Postal:*</label>
-                        <input class="form__input" type="text" name="zipCode" id="zipCode"  >
+    
+                    <!-- PESTAÑA 5 -->
+                    <div class="tab-pane fade w-100" id="management" role="tabpanel">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Gestión Interna</legend>
+                            <div class="form__div">
+                                <label class="form__label" for="observations" id="labelObservations">Observaciones:</label>
+                                <input class="form__input" type="text" name="observations" id="observations">
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="blockedSales" id="labelBlockedSales">Ventas bloqueadas:</label>
+                                <select class="form__input" name="blockedSales" id="blockedSales">
+                                    <option value="no">No</option>
+                                    <option value="si">Si</option>
+                                </select>
+                            </div>
+                            <div class="form__div">
+                                <label class="form__label" for="blockReason" id="labelBlockReason">Motivo:</label>
+                                <input class="form__input" type="text" name="blockReason" id="blockReason">
+                            </div>
+                        </fieldset>
                     </div>
-                    <div class="form__div">
-                        <label class="form__label" for="country" id="labelCountry">País:</label>
-                        <input class="form__input" type="text" name="country" id="country">
-                    </div>
-                    <div class="form__div">
-                        <label class="form__label" for="phone" id="labelPhone">Teléfono:*</label>
-                        <input class="form__input" type="tel" name="phone" id="phone"  >
-                    </div>
-                    <div class="form__div">
-                        <label class="form__label" for="email" id="labelEmail">Email:*</label>
-                        <input class="form__input" type="email" name="email" id="email"  >
-                    </div>
-                </fieldset>
-
-                <!-- SECTION: BILLING AND PAYMENT -->
-                <fieldset class="form__fieldset">
-                    <legend class="form__legend">Facturación y Pago</legend>
-                    <div class="form__div">
-                        <label class="form__label" for="paymentMethod" id="labelPaymentMethod">Forma de pago:*</label>
-                        <select class="form__input" name="paymentMethod" id="paymentMethod"  >
-                            <option value="" disabled selected>Seleccione una opción</option>
-                            <option value="anticipada">Transferencia anticipada</option>
-                            <option value="recibo30">Recibo a 30 días</option>
-                            <option value="confirming30">Confirming transferencia a 30 días</option>
-                        </select>
-                    </div>
-                    <div class="form__div">
-                        <label class="form__label" for="vatRegime" id="labelVatRegime">Régimen IVA:*</label>
-                        <select class="form__input" name="vatRegime" id="vatRegime"  >
-                            <option value="general">General</option>
-                            <option value="exento">Exento</option>
-                            <option value="recargo">Recargo de equivalencia</option>
-                        </select>
-                    </div>
-                    <div class="form__div">
-                        <label class="form__label" for="bankData" id="labelBankData">Datos Bancarios:</label>
-                        <input class="form__input" type="text" name="bankData" id="bankData" placeholder="IBAN">
-                    </div>
-                </fieldset>
-
-                <!-- SECTION: DELIVERY -->
-                <fieldset class="form__fieldset">
-                    <legend class="form__legend">Dirección de entrega (si aplica)</legend>
-                    <div class="form__div">
-                        <label class="form__label" for="deliveryAddress" id="labelDeliveryAddress">Dirección:</label>
-                        <input class="form__input" type="text" name="deliveryAddress" id="deliveryAddress">
-                    </div>
-                    <div class="form__div">
-                        <label class="form__label" for="deliveryZipCode" id="labelDeliveryZipCode">Código postal:</label>
-                        <input class="form__input" type="text" name="deliveryZipCode" id="deliveryZipCode">
-                    </div>
-                </fieldset>
-
-                <!-- SECTION: INTERNAL MANAGEMENT -->
-                <fieldset class="form__fieldset">
-                    <legend class="form__legend">Gestión Interna</legend>
-                    <div class="form__div">
-                        <label class="form__label" for="observations" id="labelObservations">Observaciones:</label>
-                        <input class="form__input" type="text" name="observations" id="observations">
-                    </div>
-                    <div class="form__div">
-                        <label class="form__label" for="blockedSales" id="labelBlockedSales">Ventas bloqueadas:</label>
-                        <select class="form__input" name="blockedSales" id="blockedSales">
-                            <option value="no">No</option>
-                            <option value="si">Si</option>
-                        </select>
-                    </div>
-                    <div class="form__div">
-                        <label class="form__label" for="blockReason" id="labelBlockReason">Motivo:</label>
-                        <input class="form__input" type="text" name="blockReason" id="blockReason">
-                    </div>
-                </fieldset>
-
-                <!-- PRIVACY POLICY -->
-                <div class="form__div-checkbox">
-                    <input class="form_checkbox" type="checkbox" value="1" id="privacyPolicy" required>
-                    <span class="form__span">*Acepto las <a class="form__link" href="politics.html"> Condiciones y política de empresa</a></span>
                 </div>
-
-                <div class="form__div">
-                    <button class="form__btn" type="submit">Dar de alta cliente</button>
+    
+                <!-- BOTÓN Y PRIVACIDAD -->
+                <div class="mt-4 border-top pt-3">
+                    <div class="form__div-checkbox">
+                        <input class="form_checkbox" type="checkbox" value="1" id="privacyPolicy">
+                        <span class="form__span">*Acepto las <a class="form__link" href="politics.html"> Condiciones y política de empresa</a></span>
+                    </div>
+                    <div class="form__div">
+                        <button class="form__btn" type="submit">Dar de alta cliente</button>
+                        <span class="mt-2 span-obligatory " id="span-obligatory">*Campos obligatorios</span>
+                    </div>
                 </div>
-                <span>*Campos obligatorios</span>
             </form>
         </section>
-        <!--END FORM -->
     </main>
 
     <footer class="footer">

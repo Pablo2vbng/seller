@@ -8,6 +8,7 @@ const validateForm = (e) => {
     e.preventDefault();
     // VALOR INICIAL
     let formOk = true;
+    clearError();
     // VALORES
     const nameValue = name.value;
     const emailValue = email.value;
@@ -20,11 +21,12 @@ const validateForm = (e) => {
     const regexTel = /^[0-9]{9}$/;
     const regexComments = /^[\s\S]{0,500}$/;
     // --- VALIDACIONES ---
+    function clearError() {
+        const spansError = document.querySelectorAll(".form-error__span");
+        spansError.forEach(span => span.remove());
+    }
     // 1. NAME
     const labelName = document.getElementById("labelName");
-    const errorName = labelName.querySelector(".form-error__span");
-    if (errorName)
-        errorName.remove();
     if (!regexName.test(nameValue)) {
         console.error("Nombre formulario incorrecto");
         formOk = false;
@@ -35,9 +37,6 @@ const validateForm = (e) => {
     }
     // 2. EMAIL
     const labelEmail = document.getElementById("labelEmail");
-    const errorEmail = labelEmail.querySelector(".form-error__span");
-    if (errorEmail)
-        errorEmail.remove();
     if (!regexEmail.test(emailValue)) {
         console.error("Email formulario incorrecto ");
         formOk = false;
@@ -48,9 +47,6 @@ const validateForm = (e) => {
     }
     // 3. TELÉFONO
     const labelTel = document.getElementById("labelTel");
-    const errorTel = labelTel.querySelector(".form-error__span");
-    if (errorTel)
-        errorTel.remove();
     if (!regexTel.test(telValue)) {
         console.error("Teléfono formulario incorrecto ");
         formOk = false;
@@ -61,9 +57,6 @@ const validateForm = (e) => {
     }
     // 4. COMENTARIOS
     const labelComments = document.getElementById("labelComments");
-    const errorComments = labelComments.querySelector(".form-error__span");
-    if (errorComments)
-        errorComments.remove();
     if (!regexComments.test(commentsValue)) {
         console.error("Comentarios formulario incorrecto ");
         formOk = false;
@@ -74,9 +67,6 @@ const validateForm = (e) => {
     }
     // 5. CHECK (POLÍTICA)
     const divPolitics = politics.parentElement;
-    const errorPolitics = divPolitics.querySelector(".form-error__span");
-    if (errorPolitics)
-        errorPolitics.remove();
     if (!politics.checked) {
         console.error("Check formulario incorrecto ");
         formOk = false;

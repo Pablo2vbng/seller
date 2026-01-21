@@ -3,24 +3,44 @@
 @use 'vars';
 
 .container__form {
-    max-width: 80%;
+    max-width: 98%;
     margin: 3rem auto 2rem auto; 
     background-color: var(--bg-card);
     border: 0.0625rem solid var(--border-soft);
     border-radius: 0.5rem;
     padding: 2.5rem 1.5rem;
-    text-decoration: none;
     transition: transform var(--transition-fast), border-color var(--transition-fast);
 
     &:hover {
-        transform: translateY(0.05rem); 
         border-color: var(--primary-color);
     }
 }
 
-.form {
-    background-color: var(--bg-card);
+.nav-tabs {
+    border-bottom: 0.1250rem solid var(--border-soft);
+    .nav-link {
+        color: var(--text-soft);
+        border: none;
+        &:hover {
+            color: var(--primary-color);
+            border: none;
+        }
+        &.active {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-bottom: 0.1875rem solid var(--primary-color);
+            font-weight: bold;
+        }
+    }
+}
 
+.contact__form {
+    
+    padding: 1rem 0;
+    min-height: 21.8750rem; 
+}
+
+.form {
     &__title {
         text-align: center;
         color: var(--primary-color);
@@ -31,9 +51,8 @@
         border: 0.125rem solid var(--primary-color); 
         border-radius: 0.5rem;
         padding: 1.5rem;
-        margin-bottom: 2rem;
-        width: 95%;
-
+        margin-bottom: 1rem;
+        width: 100%; 
     }
 
     &__legend {
@@ -50,8 +69,8 @@
         margin: 0 auto;
 
         &-checkbox {
-            text-align: center;
-            padding: 1rem;
+            text-align: left;
+            padding: 1rem 0.5rem;
         }
     }
 
@@ -60,8 +79,8 @@
         width: 100%;
         
         option {
-            background-color: var(--bg-black);
-            color: var(--text-white);
+            background-color: #000; 
+            color: #fff;
         }
     }
 
@@ -75,27 +94,12 @@
         width: 100%;
     }
 
-    &__link {
-        text-decoration: none;
-        color: var(--primary-color);
-        transition: transform var(--transition-fast);
-
-        &:hover {
-            display: inline-block;
-            transform: scale(1.02);
-            cursor: pointer;
-        }
-    }
-
     &__btn {
         @include mixins.btn;
         margin-top: 1rem;
         width: 100%;
-    }
-
-    &__span {
-        color: var(--text-soft);
-        font-size: 0.9rem;
+        max-width: 25rem;
+        margin: 0 auto;
     }
 
     &-error__span {
@@ -106,15 +110,10 @@
     }
 }
 
-// Media query para móviles
+
 @media (max-width: 48rem) {
-    .container__form {
-        max-width: 95%;
-        padding: 1.5rem 0.5rem;
-    }
-    
-    .form__fieldset {
-        width: 100%;
-        padding: 1rem 0.5rem;
+    .nav-tabs .nav-link {
+        font-size: 0.8rem;
+        padding: 0.5rem;
     }
 }

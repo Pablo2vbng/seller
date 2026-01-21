@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller | Política de Privacidad</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-dark bg-black fixed-top border-bottom border-secondary">
+            <div class="container-fluid px-4">
+                <!-- LOGO SELLER -->
+                <a class="logo" href="../index.html">
+                    <span class="logo__s">S</span><span class="logo__eller">eller</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navSidebar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end bg-black text-white" tabindex="-1" id="navSidebar">
+                    <div class="offcanvas-header border-bottom border-dark">
+                        <div class="logo"><span class="logo__s">S</span><span class="logo__eller">eller</span></div>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav gap-3">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#">Cookies y Privacidad</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- LIGHT MODE SWITCH -->
+    <section class="theme-switch">
+        <div class="theme-switch__container">
+            <div class="form-check form-switch">
+                <input class="theme-switch__input form-check-input" type="checkbox" id="checkNativeSwitch">
+                <label class="theme-switch__label form-check-label" for="checkNativeSwitch">
+                    Modo Claro
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT: POLICY -->
+    <main class="policy">
+        <header class="policy__header">
+            <h1 class="policy__title">Política de Privacidad y Cookies</h1>
+            <p class="policy__subtitle">Desarrollado por Pablo Vidal Vidal para Seller</p>
+        </header>
+
+        <section class="policy__section">
+            <h2 class="policy__section-title">Información Legal</h2>
+            <p class="policy__text">
+                En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información, se informa que este sitio web es propiedad de <strong>Pablo Vidal Vidal</strong> bajo la marca comercial <strong>Seller</strong>.
+            </p>
+        </section>
+
+        <section class="policy__section">
+            <h2 class="policy__section-title">Protección de Datos</h2>
+            <p class="policy__text">
+                Seller se compromete al cumplimiento de la normativa española de protección de datos de carácter personal, y garantiza el cumplimiento íntegro de las obligaciones dispuestas, así como la implementación de las medidas de seguridad dispuestas en el Reglamento General de Protección de Datos (RGPD).
+            </p>
+            <ul class="policy__list">
+                <li class="policy__list-item">Finalidad: Gestión de clientes corporativos.</li>
+                <li class="policy__list-item">Legitimación: Consentimiento del interesado.</li>
+                <li class="policy__list-item">Derechos: Acceso, rectificación y supresión de datos.</li>
+            </ul>
+        </section>
+
+        <section class="policy__section">
+            <h2 class="policy__section-title">Política de Cookies</h2>
+            <p class="policy__text">
+                Este sitio web utiliza cookies técnicas para recordar sus preferencias (como el Modo Claro/Oscuro) y mejorar su navegación. No utilizamos cookies de publicidad comportamental de terceros sin su consentimiento.
+            </p>
+        </section>
+
+        <div class="policy__footer-cta">
+            <a href="../index.html" class="policy__link">Volver al Dashboard</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__social">
+                <a href="https://instagram.com" class="footer__link footer__link--icon" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com" class="footer__link footer__link--icon" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <nav class="footer__nav">
+                <a href="https://lawebdetuempresa.com" class="footer__link" target="_blank">Web Corporativa</a>
+                <a href="contact.html" class="footer__link">Página de Contacto</a>
+                <a href="politics.html" class="footer__link">Cookies y Privacidad</a>
+            </nav>
+            <div class="footer__copy">
+                <p>&copy; 2026 <span class="footer__highlight">Seller</span>. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../dist/main.js"></script>
+</body>
+</html>

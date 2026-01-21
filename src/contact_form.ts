@@ -11,9 +11,10 @@ const validateForm = (e: Event) => {
 
     // VALOR INICIAL
     let formOk = true
+    clearError()
 
     // VALORES
-    const nameValue: string = name.value
+    const nameValue: string  =  name.value
     const emailValue: string = email.value
     const telValue: string = tel.value
     const commentsValue: string = comments.value
@@ -26,11 +27,13 @@ const validateForm = (e: Event) => {
     const regexComments = /^[\s\S]{0,500}$/
 
     // --- VALIDACIONES ---
-
+    function clearError(){
+        const spansError = document.querySelectorAll(".form-error__span")
+        spansError.forEach(span => span.remove())
+    }
+    
     // 1. NAME
     const labelName = document.getElementById("labelName") as HTMLLabelElement
-    const errorName = labelName.querySelector(".form-error__span")
-    if (errorName) errorName.remove()
 
     if (!regexName.test(nameValue)) {
         console.error("Nombre formulario incorrecto")
@@ -43,8 +46,6 @@ const validateForm = (e: Event) => {
 
     // 2. EMAIL
     const labelEmail = document.getElementById("labelEmail") as HTMLLabelElement
-    const errorEmail = labelEmail.querySelector(".form-error__span")
-    if (errorEmail) errorEmail.remove()
 
     if (!regexEmail.test(emailValue)) {
         console.error("Email formulario incorrecto ")
@@ -57,8 +58,6 @@ const validateForm = (e: Event) => {
 
     // 3. TELÉFONO
     const labelTel = document.getElementById("labelTel") as HTMLLabelElement
-    const errorTel = labelTel.querySelector(".form-error__span")
-    if (errorTel) errorTel.remove()
 
     if (!regexTel.test(telValue)) {   
         console.error("Teléfono formulario incorrecto ")
@@ -71,8 +70,6 @@ const validateForm = (e: Event) => {
 
     // 4. COMENTARIOS
     const labelComments = document.getElementById("labelComments") as HTMLLabelElement
-    const errorComments = labelComments.querySelector(".form-error__span")
-    if (errorComments) errorComments.remove()
 
     if (!regexComments.test(commentsValue)) {
         console.error("Comentarios formulario incorrecto ")
@@ -85,8 +82,6 @@ const validateForm = (e: Event) => {
 
     // 5. CHECK (POLÍTICA)
     const divPolitics = politics.parentElement as HTMLElement
-    const errorPolitics = divPolitics.querySelector(".form-error__span")
-    if (errorPolitics) errorPolitics.remove()
 
     if (!politics.checked) {
         console.error("Check formulario incorrecto ")
